@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Ask for local notifications
+        let notificationSettings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
+        
+        LocationManager.sharedInstance.setup()
+        LocationManager.sharedInstance.startMonitoring()
+        
         return true
     }
 
