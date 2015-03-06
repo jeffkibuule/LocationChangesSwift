@@ -24,11 +24,32 @@ class LocationManager : NSObject, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = LocationSettings.sharedInstance.locationAccuracy.desiredAccuracy
         locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse {
+            if LocationSettings.sharedInstance.monitoringEnabled {
+                LocationManager.sharedInstance.startMonitoring()
+            } else {
+                LocationManager.sharedInstance.stopMonitoring()
+            }
+        }
     }
     
     func changeAccuracy(accuracy: CLLocationAccuracy) {
         locationManager.desiredAccuracy = accuracy
         LocationSettings.sharedInstance.locationAccuracy = LocationSettings.LocationAccuracy(accuracy: accuracy)
+    }
+    
+    var monitoring: Bool {
+        get {
+            return LocationSettings.sharedInstance.monitoringEnabled
+        }
+        set {
+            if newValue {
+                startMonitoring()
+            } else {
+                stopMonitoring()
+            }
+        }
     }
     
     func startMonitoring () {

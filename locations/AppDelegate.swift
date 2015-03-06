@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(notificationSettings)
         
         LocationManager.sharedInstance.setup()
-        LocationManager.sharedInstance.startMonitoring()
         
         return true
     }

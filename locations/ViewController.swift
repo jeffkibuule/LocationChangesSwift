@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var notificationsSwitch: UISwitch!
+    @IBOutlet weak var monitoringSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +65,17 @@ class ViewController: UIViewController {
         }
         
         LocationManager.sharedInstance.changeAccuracy(locationAccuracy.desiredAccuracy)
+        println("Accuracy: \(locationAccuracy.description)")
     }
     
     @IBAction func notificationsToggled(sender: UISwitch) {
         LocationSettings.sharedInstance.notificationsEnabled = sender.on
+        println("Notifications: \(sender.on)")
+    }
+    
+    @IBAction func monitoringToggled(sender: UISwitch) {
+        LocationSettings.sharedInstance.monitoringEnabled = sender.on
+        println("Monitoring: \(sender.on)")
     }
     
     func updateUI() {

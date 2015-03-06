@@ -177,18 +177,36 @@
                                     <action selector="notificationsToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="sbj-zV-wFO"/>
                                 </connections>
                             </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZG8-sv-H5R">
+                                <rect key="frame" x="349" y="323" width="51" height="31"/>
+                                <connections>
+                                    <action selector="monitoringToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="0DJ-XE-a1Y"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monitoring" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQv-Qv-pyH">
+                                <rect key="frame" x="188" y="328" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lKN-Fo-dzn" firstAttribute="leading" secondItem="pNF-9w-RkU" secondAttribute="trailing" constant="65" id="1O4-K9-S0J"/>
                             <constraint firstItem="pNF-9w-RkU" firstAttribute="top" secondItem="mpC-23-2ax" secondAttribute="bottom" constant="19" id="C17-fC-WYU"/>
+                            <constraint firstItem="ZG8-sv-H5R" firstAttribute="leading" secondItem="MQv-Qv-pyH" secondAttribute="trailing" constant="78" id="E2V-Zb-EI2"/>
                             <constraint firstItem="XQ3-pT-VHu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="HBq-Uc-A1n"/>
+                            <constraint firstItem="ZG8-sv-H5R" firstAttribute="leading" secondItem="lKN-Fo-dzn" secondAttribute="leading" id="I6b-8h-386"/>
+                            <constraint firstItem="ZG8-sv-H5R" firstAttribute="top" secondItem="lKN-Fo-dzn" secondAttribute="bottom" constant="8" symbolic="YES" id="IlO-2g-nd0"/>
                             <constraint firstItem="mpC-23-2ax" firstAttribute="top" secondItem="XQ3-pT-VHu" secondAttribute="bottom" constant="8" id="LtP-Or-SsQ"/>
                             <constraint firstItem="XQ3-pT-VHu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SLl-wp-lsi"/>
                             <constraint firstAttribute="centerX" secondItem="mpC-23-2ax" secondAttribute="centerX" id="Tcr-TR-yYG"/>
+                            <constraint firstItem="MQv-Qv-pyH" firstAttribute="leading" secondItem="pNF-9w-RkU" secondAttribute="leading" id="XO1-O2-8Dg"/>
                             <constraint firstItem="pNF-9w-RkU" firstAttribute="leading" secondItem="mpC-23-2ax" secondAttribute="leading" id="cd4-Na-lDi"/>
                             <constraint firstItem="lKN-Fo-dzn" firstAttribute="centerY" secondItem="pNF-9w-RkU" secondAttribute="centerY" id="p3A-YT-7YA"/>
+                            <constraint firstItem="MQv-Qv-pyH" firstAttribute="top" secondItem="pNF-9w-RkU" secondAttribute="bottom" constant="18" id="qgg-T8-1No"/>
                             <constraint firstItem="XQ3-pT-VHu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yxn-2s-Shd"/>
+                            <constraint firstItem="MQv-Qv-pyH" firstAttribute="centerY" secondItem="ZG8-sv-H5R" secondAttribute="centerY" id="zrJ-bK-Ctr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -196,6 +214,7 @@
                         <outlet property="bestLabel" destination="ZOO-d9-5la" id="Olx-rz-VnW"/>
                         <outlet property="hundredLabel" destination="Q3r-4N-arU" id="f9s-U0-RpY"/>
                         <outlet property="kilometerLabel" destination="3it-Th-R5C" id="lFR-np-hnt"/>
+                        <outlet property="monitoringSwitch" destination="ZG8-sv-H5R" id="gKB-9T-9uk"/>
                         <outlet property="navLabel" destination="kQu-BG-d3l" id="uBs-AX-fwV"/>
                         <outlet property="nearestTenLabel" destination="oJz-U8-12x" id="KqJ-7Y-i46"/>
                         <outlet property="notificationsSwitch" destination="lKN-Fo-dzn" id="SaY-wp-idv"/>

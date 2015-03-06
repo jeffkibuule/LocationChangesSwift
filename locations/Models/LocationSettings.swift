@@ -21,6 +21,7 @@ class LocationSettings {
     struct Constants {
         static let LocationAccuracyKey = "accuracy"
         static let NotificationsEnabledKey = "notifications"
+        static let MonitoringEnabledKey = "monitoring"
     }
     
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -98,6 +99,22 @@ class LocationSettings {
         set {
             defaults.setInteger(newValue.rawValue, forKey: Constants.LocationAccuracyKey)
             defaults.synchronize()
+        }
+    }
+    
+    var monitoringEnabled: Bool {
+        get {
+            if let monitoring = defaults.objectForKey(Constants.MonitoringEnabledKey) as? Bool {
+                return monitoring
+            }
+            
+            return true
+        }
+        set {
+            defaults.setBool(newValue, forKey: Constants.MonitoringEnabledKey)
+            defaults.synchronize()
+            
+            LocationManager.sharedInstance.monitoring = newValue
         }
     }
     
